@@ -1,5 +1,3 @@
-// TODO: Add function comments!! Will do by 13/2
-//
 // part1_galaxy.c
 //
 // This program was written by Pat Chambers (z5264081), 12/3/24
@@ -105,6 +103,11 @@ void print_map(struct celestial_body galaxy[SIZE][SIZE]) {
     }
 }
 
+// Initialise each `struct celestial_body` in the galaxy array to its default 
+// values. `entity` is initialised to EMPTY and `points` to NEBULA_POINTS
+// Parameters: 
+//              galaxy - 2D array representing the galaxy
+// Returns:     none
 void initialise_galaxy(struct celestial_body galaxy[SIZE][SIZE]) {
     for (int row = 0; row < SIZE; row++) {
         for (int col = 0; col < SIZE; col++) {
@@ -114,6 +117,10 @@ void initialise_galaxy(struct celestial_body galaxy[SIZE][SIZE]) {
     }
 }
 
+// Scan player position and add the player to the specified position
+// Parameters: 
+//              galaxy - 2D array representing the galaxy
+// Returns:     none
 void add_player(struct celestial_body galaxy[SIZE][SIZE]) {
 
     printf("Enter the starting position of the player: ");
@@ -132,6 +139,11 @@ void add_player(struct celestial_body galaxy[SIZE][SIZE]) {
 
 }
 
+// Scan planets and nebulae positions (and points for the planets) and add them 
+// to the galaxy
+// Parameters: 
+//              galaxy - 2D array representing the galaxy
+// Returns:     none
 void add_planets_nebulae(struct celestial_body galaxy[SIZE][SIZE]) {
 
     printf("How many planets and nebulae are there? ");
@@ -156,6 +168,11 @@ void add_planets_nebulae(struct celestial_body galaxy[SIZE][SIZE]) {
     }
 }
 
+// Scan in star positions and points and add them to the galaxy, looping until 
+// the user presses ctrl-d
+// Parameters: 
+//              galaxy - 2D array representing the galaxy
+// Returns:     none
 void add_stars(struct celestial_body galaxy[SIZE][SIZE]) {
     printf("Enter the position and points of the star(s): \n");
     int star_row;
